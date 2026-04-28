@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: raptureboi83/kimi-wedding-site # Your GitHub repo
+  branch: main # The main branch for your site
+
+# Define the collections (types of content) for your CMS
+collections:
+  # Example: A collection for pages
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages" # Folder where these pages will be stored
+    create: true # Allow creating new pages
+    slug: "{{slug}}" # Use the file name as the slug
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Example: A collection for settings
+  - name: "settings"
+    label: "Settings"
+    folder: "content/settings"
+    create: false # Typically only one settings file
+    fields:
+      - { label: "Site Title", name: "site_title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+
+  # Add more collections here for other content types (e.g., blog posts, galleries)
